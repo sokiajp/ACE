@@ -1,26 +1,26 @@
     .syntax unified
     .cpu    arm7tdmi
 
-    .equ VERSION, "LG_SWITCH"
+    VERSION = "LG_SWITCH"
 
 .if VERSION == "LG_V1"
-    .equ    CONST_addr_AddWindow8Bit, 0x08005004
-    .equ    CONST_addr_CreateTask, 0x08076BB4
-    .equ    CONST_newAndRepeatedKeys, 0x03003160
-    .equ    CONST_sLockFieldControls, 0x03000F9C
-    .equ    CONST_addr_DestroyTask, 0x8076CA0
-    .equ    CONST_addr_FillWindowPixelBuffer, 0x08004428
-    .equ    CONST_addr_half_AddTextPrinterParameterized3, 0x0409767E
+    CONST_addr_AddWindow8Bit = 0x08005004
+    CONST_addr_CreateTask = 0x08076BB4
+    CONST_newAndRepeatedKeys = 0x03003160
+    CONST_sLockFieldControls = 0x03000F9C
+    CONST_addr_DestroyTask = 0x8076CA0
+    CONST_addr_FillWindowPixelBuffer = 0x08004428
+    CONST_addr_half_AddTextPrinterParameterized3 = 0x0409767E
 .endif
 
 .if VERSION == "LG_SWITCH"
-    .equ    CONST_addr_AddWindow8Bit, 0x08004F6C
-    .equ    CONST_addr_CreateTask, 0x0807A3CC
-    .equ    CONST_newAndRepeatedKeys, 0x03002310
-    .equ    CONST_sLockFieldControls, 0x0300109C
-    .equ    CONST_addr_DestroyTask, 0x0807A4B6
-    .equ    CONST_addr_FillWindowPixelBuffer, 0x08004390
-    .equ    CONST_addr_half_AddTextPrinterParameterized3, 0x04099478
+    CONST_addr_AddWindow8Bit = 0x08004F6C
+    CONST_addr_CreateTask = 0x0807A3CC
+    CONST_newAndRepeatedKeys = 0x03002310
+    CONST_sLockFieldControls = 0x0300109C
+    CONST_addr_DestroyTask = 0x0807A4B6
+    CONST_addr_FillWindowPixelBuffer = 0x08004390
+    CONST_addr_half_AddTextPrinterParameterized3 = 0x04099478
 .endif
 
 
@@ -334,3 +334,4 @@ addr_half_AddTextPrinterParameterized3:
     .word   CONST_addr_half_AddTextPrinterParameterized3
 
     .end
+    

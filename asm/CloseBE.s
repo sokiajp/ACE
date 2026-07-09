@@ -16,11 +16,6 @@
     .org 0x86
 ChangeCode:
     adr     r7, CloseBE
-Trampoline:
-    adds    r7, #1
-    mov     lr, r7
-    mov     pc, r4
-
 
     .org 0x50 * 6
 CloseBE:
@@ -29,19 +24,11 @@ CloseBE:
     ldr     r4, ClearStdWindowAndFrame
     mov     r7,pc
     b       Trampoline
-
-    ldrb    r0, [r5, #8]
-    ldr     r4, RemoveWindow
-
-    .hword   0x0000
-.word   0xAAAAE000
-    mov     r7, pc
-    b       Trampoline
     pop     {r4,r5,r6,r7,pc}
 
-    .hword   0x0000
     .align 2
-addr_ClearStdWindowAndFrame:
-    .word   CONST_addr_ClearStdWindowAndFrame
-addr_RemoveWindow:
-    .word   CONST_addr_RemoveWindow
+ClearStdWindowAndFrame:
+    .word   CONST_ClearStdWindowAndFrame
+
+    .end
+    
